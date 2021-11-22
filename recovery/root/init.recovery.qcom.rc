@@ -25,8 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import /init.recovery.qcom_decrypt.rc
-
 service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     user root
     group root
@@ -41,13 +39,6 @@ service vibratorfeature-hal-1-0 /system/bin/vendor.xiaomi.hardware.vibratorfeatu
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     seclabel u:r:recovery:s0
     onrestart restart vibratorfeature
-
-service variant-script /system/bin/variant-script.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -67,7 +58,6 @@ on fs
     chmod 0666  /sys/bus/i2c/drivers/aw8624_haptic/2-005a/custom_wave
 
 on boot
-    start variant-script
     start health-hal-2-1
     start vendor.qti.vibrator
     start vibratorfeature-hal-1-0

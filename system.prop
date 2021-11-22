@@ -1,5 +1,5 @@
-ro.product.vendor.marketname=Redmi Note 10 Pro
-ro.product.board=sweet
+ro.product.vendor.marketname=Mi Note 10 Lite
+ro.product.board=sm6150
 ro.board.platform=sm6150
 sys.usb.controller=a600000.dwc3
 sys.usb.rndis.func.name=rndis_bam

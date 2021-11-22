@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="sweet"
+FDEVICE="toco"
 #set -o xtrace
 
 fox_get_target_device() {
@@ -38,7 +38,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	export TW_DEFAULT_LANGUAGE="en"
 	export LC_ALL="C"
  	export ALLOW_MISSING_DEPENDENCIES=true
-	export TARGET_DEVICE_ALT="sweet,sweetin,sweetinpro"
+	export TARGET_DEVICE_ALT="toco"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export OF_USE_GREEN_LED=0
@@ -68,15 +68,15 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 
 	# Screen settings
-	export OF_SCREEN_H=2400
-	export OF_STATUS_H=100
-	export OF_STATUS_INDENT_LEFT=48
-	export OF_STATUS_INDENT_RIGHT=48
+	export OF_SCREEN_H=2340
+	export OF_STATUS_H=73
+	export OF_STATUS_INDENT_LEFT=20
+	export OF_STATUS_INDENT_RIGHT=20
 	export OF_CLOCK_POS=1
 	
 	# R11.1 Settings
 	export FOX_VERSION="R11.1_2"
-	export OF_MAINTAINER="Sushrut1101"
+	export OF_MAINTAINER="DennisMurimi"
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
