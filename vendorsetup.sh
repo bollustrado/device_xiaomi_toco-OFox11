@@ -49,12 +49,19 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 	export OF_NO_MIUI_PATCH_WARNING=1
+    export FOX_ADVANCED_SECURITY=0
+    export OF_NO_SAMSUNG_SPECIAL=1
+    export FOX_INSTALLER_DEBUG_MODE=1
+    export OF_FLASHLIGHT_ENABLE="1"
+    export FOX_USE_NANO_EDITOR="1"
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/iderkun/OrangeFox_10/fox_11.0/device/xiaomi/toco/magisk/Magisk-v23.0.zip"
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
-    export OF_QUICK_BACKUP_LIST="/boot;/data;"
+    export FOX_USE_LZMA_COMPRESSION=1
+    export OF_QUICK_BACKUP_LIST="/boot;/dtbo;/data;"
 	export OF_PATCH_AVB20=1
     export FOX_DELETE_AROMAFM=1
     export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
@@ -66,6 +73,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
     export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
     export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+    export FOX_REPLACE_BOOTIMAGE_DATE=1
+    export OF_CHECK_OVERWRITE_ATTEMPTS=1
 
 	# Screen settings
 	export OF_SCREEN_H=2340
@@ -76,7 +85,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	
 	# R11.1 Settings
 	export FOX_VERSION="R11.1_2"
-	export OF_MAINTAINER="DennisMurimi"
+	export OF_MAINTAINER="b1ackm3sa"
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
